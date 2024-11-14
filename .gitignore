@@ -19,6 +19,7 @@
 
 # production
 /build
+/public/072516-9-cortado.mp4
 
 # misc
 .DS_Store
