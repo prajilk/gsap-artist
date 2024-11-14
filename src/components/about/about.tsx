@@ -37,12 +37,12 @@ const About = () => {
                 </div>
                 <div className="uppercase text-[max(1.146vw,22px)] my-auto">
                     <div className="reveal_text max-w-[31rem] overflow-hidden 2xl:max-w-[50rem] [&>div:first-child]:ms-64">
-                        I'm an artist known for my surreal and sensual artworks,
-                        combining photography and oil painting. Based in Ibiza,
-                        I capture the beauty and complexity of the female form,
-                        using both traditional and AI-enhanced techniques to
-                        create timeless pieces that explore themes of perfection
-                        and desire.
+                        I&apos;m an artist known for my surreal and sensual
+                        artworks, combining photography and oil painting. Based
+                        in Ibiza, I capture the beauty and complexity of the
+                        female form, using both traditional and AI-enhanced
+                        techniques to create timeless pieces that explore themes
+                        of perfection and desire.
                     </div>
                 </div>
             </div>

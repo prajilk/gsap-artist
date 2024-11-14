@@ -8,7 +8,6 @@ import Preloader from "../components/preloader/preloader";
 import Hero from "../components/hero/hero";
 import { forwardAnimation, reverseAnimation } from "@/utils/gsap-utils";
 import About from "@/components/about/about";
-import Lenis from "lenis";
 import ArtWork from "@/components/art-work/art-work";
 import AIArt from "@/components/ai-art/aiart";
 import Painting from "@/components/painting/painting";
@@ -134,7 +133,7 @@ export default function Home() {
                 });
             }
 
-            let delay = Math.floor(Math.random() * 200) + 50;
+            const delay = Math.floor(Math.random() * 200) + 50;
             setTimeout(updateCounter, delay);
         }
         updateCounter();

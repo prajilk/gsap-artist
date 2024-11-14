@@ -13,9 +13,9 @@ export default function Hero({
     heroHead3Ref,
 }: {
     contentRef: RefObject<HTMLDivElement>;
-    heroHead1Ref: any;
-    heroHead2Ref: any;
-    heroHead3Ref: any;
+    heroHead1Ref: RefObject<HTMLDivElement>;
+    heroHead2Ref: RefObject<HTMLDivElement>;
+    heroHead3Ref: RefObject<HTMLDivElement>;
 }) {
     useLayoutEffect(() => {
         // Text reveal animation

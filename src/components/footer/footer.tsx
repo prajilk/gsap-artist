@@ -1,4 +1,3 @@
-import { cn } from "@/utils/cn";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
