@@ -31,8 +31,8 @@ export default function Hero({
         >
             <div className="relative w-full h-ful">
                 <video
-                    // src="https://res.cloudinary.com/dq11x4tkw/video/upload/v1730914573/videos/072516-9-cortado_ihrtev.mp4"
-                    src="/072516-9-cortado.mp4"
+                    src="https://res.cloudinary.com/dq11x4tkw/video/upload/v1730914573/videos/072516-9-cortado_ihrtev.mp4"
+                    // src="/072516-9-cortado.mp4"
                     muted
                     loop
                     autoPlay
