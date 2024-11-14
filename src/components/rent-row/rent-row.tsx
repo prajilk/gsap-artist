@@ -26,7 +26,7 @@ const RentRow = () => {
                         fontFamily: "SaolDisplay",
                     }}
                 >
-                    Rent Jehan Legac's art and transform your interiors
+                    Rent Jehan Legac&apos;s art and transform your interiors
                 </h1>
                 <p className="text-[1.3vw] uppercase leading-tight">
                     Jehan Legac offers an exclusive collection of artworks

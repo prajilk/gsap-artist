@@ -38,9 +38,9 @@ const reverseAnimation = (
 };
 
 function heroSectionTextReveal(
-    heroHead1Ref: any,
-    heroHead2Ref: any,
-    heroHead3Ref: any
+    heroHead1Ref: RefObject<HTMLDivElement>,
+    heroHead2Ref: RefObject<HTMLDivElement>,
+    heroHead3Ref: RefObject<HTMLDivElement>
 ) {
     const tl = gsap.timeline({
         scrollTrigger: {
