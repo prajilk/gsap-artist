@@ -44,7 +44,7 @@ const Footer = () => {
             );
     }, []);
     return (
-        <div className="min-h-screen pt-[20vw] px-[5vw] pb-10">
+        <div className="h-screen min-h-fit pt-[20vw] px-[5vw] pb-10 bg-[var(--background)]">
             <div className="grid grid-cols-3">
                 <ul className="uppercase text-[1.3vw] grid grid-cols-3 cursor-pointer">
                     <li>Home</li>

@@ -1,67 +1,73 @@
+import Image from "next/image";
+import SeeAllWorks from "../see-all-works";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger); // Register plugin
 
 const AIArt = () => {
-    const wrapperRef = useRef<HTMLDivElement | null>(null);
-    const parallaxImageRef = useRef<HTMLImageElement | null>(null);
-
     useLayoutEffect(() => {
-        const tl = gsap.timeline({
+        gsap.to(".art_1", {
+            y: -50,
+            ease: "none",
             scrollTrigger: {
-                trigger: wrapperRef.current,
-                start: "top top",
-                end: "bottom+=200% top",
-                scrub: true,
-                pin: true,
+                trigger: ".art_1",
+                start: "top center",
+                end: "bottom top",
+                scrub: 1,
             },
         });
-
-        tl.to(
-            parallaxImageRef.current,
-            {
-                ease: "none",
-                yPercent: -50,
-            },
-            0
-        );
     }, []);
 
     return (
-        <div style={{ fontFamily: "SaolDisplay" }}>
-            <div className="h-[30vw]">
-                <div ref={wrapperRef} className="absolute right-0">
-                    <div className="pe-[max(4.688vw,90px)] pt-[9vw] relative -z-10">
-                        <h1 className="w-fit ms-auto text-[max(9.896vw,40px)]">
-                            AI STUDIO
-                        </h1>
-                    </div>
+        <div>
+            <div className="sticky top-0 w-1/2 h-96 ms-auto flex items-center justify-center flex-col">
+                <div>
+                    <h1
+                        className="w-fit text-[max(9.896vw,40px)] leading-tight"
+                        style={{ fontFamily: "SaolDisplay" }}
+                    >
+                        AI STUDIO
+                    </h1>
+                    <SeeAllWorks />
                 </div>
             </div>
-            <div>
-                <div className="flex relative -z-10">
-                    <div className="w-[25vw] relative aspect-[1/1.2] inline-block self-start">
-                        <Image src="/1-1.webp" alt="" className="w-full" fill />
+            <div className="min-h-screen grid grid-cols-3">
+                <div>
+                    <div className="w-3/4">
+                        <Image
+                            src={"/1-1.webp"}
+                            alt="Art female"
+                            width={0}
+                            height={0}
+                            className="art_1 -translate-y-1/4"
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                            }}
+                        />
                     </div>
-                    <div className="w-[max(17.708vw,200px)] relative inline-block ms-auto self-start mt-72">
+                </div>
+                <div className="flex flex-col pt-20 justify-end">
+                    <div className="w-1/2 mx-auto relative z-10">
                         <Image
                             src={"/3-1.webp"}
                             alt="Art female"
                             width={0}
                             height={0}
                             sizes="100vw"
+                            className="art_1"
                             style={{
                                 width: "100%",
                                 height: "100%",
                             }}
                         />
                     </div>
-                    <div className="relative inline-block ms-auto mt-80">
+                    <div className="w-3/4 mx-auto">
                         <Image
-                            src={"/4-1.webp"}
+                            src={"/2-1.webp"}
                             alt="Art female"
                             width={0}
                             height={0}
@@ -73,21 +79,21 @@ const AIArt = () => {
                         />
                     </div>
                 </div>
-                <div
-                    className="w-[22vw] relative mx-auto -mt-10"
-                    ref={parallaxImageRef}
-                >
-                    <Image
-                        src={"/2-1.webp"}
-                        alt="Art female"
-                        width={0}
-                        height={0}
-                        sizes="100vw"
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                        }}
-                    />
+                <div className="pt-20 relative -z-10">
+                    <div className="w-3/4 mx-auto">
+                        <Image
+                            src={"/4-1.webp"}
+                            alt="Art female"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="art_1"
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

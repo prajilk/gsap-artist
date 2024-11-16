@@ -14,6 +14,9 @@ import Painting from "@/components/painting/painting";
 import Pictures from "@/components/pictures/pictures";
 import RentRow from "@/components/rent-row/rent-row";
 import Footer from "@/components/footer/footer";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
     const stripsRef = useRef<HTMLDivElement[]>([]); // For strips
@@ -27,8 +30,27 @@ export default function Home() {
 
     const handleButtonClick = () => {
         if (isAnimating) {
+            gsap.to(".nav__container", {
+                height: 0,
+                duration: 1.5,
+                opacity: 0,
+                ease: "power4.inOut",
+            });
+            gsap.to("body", {
+                overflow: "auto",
+            });
             reverseAnimation(stripsRef, contentRef); // Play reverse animation
         } else {
+            gsap.to(".nav__container", {
+                height: "100vh",
+                delay: 0.5,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power4.inOut",
+            });
+            gsap.to("body", {
+                overflow: "hidden",
+            });
             forwardAnimation(stripsRef, contentRef); // Play forward animation
         }
         setIsAnimating(!isAnimating); // Toggle state
@@ -64,7 +86,7 @@ export default function Home() {
 
         tl.fromTo(
             letters1,
-            { y: 100 },
+            { y: "100%" },
             {
                 y: 0,
                 duration: 0.7,
@@ -75,7 +97,7 @@ export default function Home() {
         )
             .fromTo(
                 letters2,
-                { y: 100 },
+                { y: "100%" },
                 {
                     y: 0,
                     duration: 0.7,
@@ -86,7 +108,7 @@ export default function Home() {
             )
             .fromTo(
                 letters3,
-                { y: 100 },
+                { y: "100%" },
                 {
                     y: 0,
                     duration: 0.7,
@@ -144,8 +166,6 @@ export default function Home() {
         document.body.style.overflow = "hidden"; // standard no-scroll implementation
         document.body.setAttribute("data-lenis-prevent", "true"); // Make sure you pass true as string
 
-        console.log("Loader started");
-
         startLoader();
     }, []);
 
@@ -159,6 +179,12 @@ export default function Home() {
 
             {/* Navbar */}
             <Navbar onClick={handleButtonClick} />
+
+            <div className="h-0 relative z-50 opacity- nav__container flex justify-center items-center overflow-hidden opacity-0">
+                <h1 className="text-8xl" style={{ fontFamily: "SaolDisplay" }}>
+                    MENU ITEMS
+                </h1>
+            </div>
 
             {/* Navbar overlay */}
             <Strips stripsRef={stripsRef} />

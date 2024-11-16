@@ -32,14 +32,13 @@ export default function Hero({
             <div className="relative w-full h-ful">
                 <video
                     src="https://res.cloudinary.com/dq11x4tkw/video/upload/v1730914573/videos/072516-9-cortado_ihrtev.mp4"
-                    // src="/072516-9-cortado.mp4"
                     muted
                     loop
                     autoPlay
                     className="w-full h-screen object-cover object-[0%_30%]"
                 ></video>
                 <div className="w-full h-full bg-black/30 top-0 left-0 absolute"></div>
-                <div className="absolute top-0 pt-20 w-full px-10">
+                <div className="absolute top-1/2 -translate-y-1/2 pt-20 w-full px-10">
                     <div
                         className="split_text_wrapper flex justify-between overflow-hidden"
                         style={{ fontFamily: "SaolDisplay" }}

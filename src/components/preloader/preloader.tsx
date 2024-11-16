@@ -9,7 +9,7 @@ const Preloader = ({ loaderOverlayRef, loaderRef }: PreloaderProps) => {
     return (
         <div
             ref={loaderOverlayRef}
-            className="w-full h-screen bg-[#1D1D1D] fixed flex top-0 left-0 z-[999] overflow-hidden"
+            className="w-full h-screen bg-[#1D1D1D] fixed flex top-0 left-0 z-[9999] overflow-hidden"
         >
             <div
                 ref={loaderRef}

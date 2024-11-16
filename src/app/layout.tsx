@@ -34,7 +34,29 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${saolDisplay.variable} antialiased`}
             >
-                <SmoothScrolling>{children}</SmoothScrolling>
+                <div className="hidden lg:block">
+                    <SmoothScrolling>{children}</SmoothScrolling>
+                </div>
+                <div className="bg-[#434343] h-screen grid place-items-center lg:hidden">
+                    <div className="space-y-1 px-5">
+                        <h1
+                            className="text-6xl font-semibold"
+                            style={{
+                                fontFamily: "SaolDisplay",
+                            }}
+                        >
+                            Welcome!
+                        </h1>
+                        <p className="text-white/65 uppercase">
+                            For the best experience, please view this site on a
+                            larger screen.
+                        </p>
+                        <p className="text-white/65 uppercase">
+                            Unfortunately, it's not optimized for smaller
+                            devices yet, but stay tuned for updates!
+                        </p>
+                    </div>
+                </div>
             </body>
         </html>
     );
