@@ -21,14 +21,14 @@ const RentRow = () => {
             </div>
             <div className="py-10 space-y-[5vw]">
                 <h1
-                    className="text-[4.5vw] leading-none text-[#434343]"
+                    className="text-[4.5vw] leading-none"
                     style={{
                         fontFamily: "SaolDisplay",
                     }}
                 >
                     Rent Jehan Legac&apos;s art and transform your interiors
                 </h1>
-                <p className="text-[1.3vw] uppercase leading-tight text-[#484847]">
+                <p className="text-[1.3vw] uppercase leading-tight text-white/50">
                     Jehan Legac offers an exclusive collection of artworks
                     available for rent, perfect for hotels and renovation
                     professionals looking to add a touch of elegance and
