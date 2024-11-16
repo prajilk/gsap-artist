@@ -52,7 +52,7 @@ export default function RootLayout({
                             larger screen.
                         </p>
                         <p className="text-white/65 uppercase">
-                            Unfortunately, it's not optimized for smaller
+                            Unfortunately, it&apos;s not optimized for smaller
                             devices yet, but stay tuned for updates!
                         </p>
                     </div>

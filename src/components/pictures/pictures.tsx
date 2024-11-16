@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import SeeAllWorks from "../see-all-works";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect } from "react";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
