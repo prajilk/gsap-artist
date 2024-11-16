@@ -1,28 +1,9 @@
 import Image from "next/image";
 import SeeAllWorks from "../see-all-works";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const RentRow = () => {
-    useLayoutEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".rent__row",
-                start: "top bottom",
-                end: "bottom top",
-                toggleActions: "play none none reverse",
-            },
-        });
-        tl.to("body", {
-            backgroundColor: "#fff",
-            duration: 0.5,
-        });
-    }, []);
     return (
-        <div className="rent__row grid grid-cols-2 p-10 gap-10 mt-32 pb-40">
+        <div className="grid grid-cols-2 p-10 gap-10 mt-32 pb-40">
             <div>
                 <div className="w-full">
                     <Image
@@ -53,12 +34,7 @@ const RentRow = () => {
                     professionals looking to add a touch of elegance and
                     distinction to any space.
                 </p>
-                <SeeAllWorks
-                    value="rent now"
-                    className="text-[#484847]"
-                    borderColor="after:bg-[#484847]"
-                    arrowColor="stroke-[#484847]"
-                />
+                <SeeAllWorks value="rent now" />
             </div>
         </div>
     );
