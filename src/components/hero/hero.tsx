@@ -26,8 +26,8 @@ export default function Hero({
     }, []);
 
     useLayoutEffect(() => {
-        var video = videoRef.current;
-        var videoSrc = process.env.NEXT_PUBLIC_VIDEO_URL || "";
+        const video = videoRef.current;
+        const videoSrc = process.env.NEXT_PUBLIC_VIDEO_URL || "";
 
         if (!videoSrc || !video) return;
 
@@ -36,11 +36,11 @@ export default function Hero({
             video.src = videoSrc;
             // If no native HLS support, check if HLS.js is supported
         } else if (Hls.isSupported()) {
-            var hls = new Hls();
+            const hls = new Hls();
             hls.loadSource(videoSrc);
             hls.attachMedia(video);
         }
-    }, [videoRef.current]);
+    }, []);
 
     return (
         <div
