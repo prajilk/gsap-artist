@@ -1,8 +1,9 @@
-import { RefObject, useLayoutEffect } from "react";
+import { RefObject, useLayoutEffect, useRef } from "react";
 import SplitText from "./split-text";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { heroSectionTextReveal } from "@/utils/gsap-utils";
+import Hls from "hls.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,10 +18,30 @@ export default function Hero({
     heroHead2Ref: RefObject<HTMLDivElement>;
     heroHead3Ref: RefObject<HTMLDivElement>;
 }) {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
     useLayoutEffect(() => {
         // Text reveal animation
         heroSectionTextReveal(heroHead1Ref, heroHead2Ref, heroHead3Ref);
     }, []);
+
+    useLayoutEffect(() => {
+        var video = videoRef.current;
+        var videoSrc = process.env.NEXT_PUBLIC_VIDEO_URL || "";
+
+        if (!videoSrc || !video) return;
+
+        // First check for native browser HLS support
+        if (video.canPlayType("application/vnd.apple.mpegurl")) {
+            video.src = videoSrc;
+            // If no native HLS support, check if HLS.js is supported
+        } else if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+        }
+    }, [videoRef.current]);
+
     return (
         <div
             ref={contentRef}
@@ -32,7 +53,8 @@ export default function Hero({
             <div className="relative w-full h-ful">
                 <video
                     // src={"/hero-video.mp4"} // Video is available inside public folder
-                    src={process.env.NEXT_PUBLIC_VIDEO_URL || ""}
+                    // src={process.env.NEXT_PUBLIC_VIDEO_URL || ""}
+                    ref={videoRef}
                     muted
                     loop
                     autoPlay
